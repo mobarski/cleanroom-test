@@ -1,0 +1,19 @@
+#!/bin/bash
+
+A=10000
+B=100000
+C=800
+
+ERROR=0.5
+ERROR2=0.0001
+SKIP=0
+
+A_PATH=work/A.txt
+B_PATH=work/B.txt
+C_PATH=work/C.txt
+K_PATH=work/K.txt
+
+
+python3 gen.py $A $B $C
+./cleanroom create    work/mm -i $A_PATH -v -k $K_PATH --error $ERROR --error2 $ERROR2
+./cleanroom intersect work/mm -i $B_PATH -v -k $K_PATH -o $C_PATH -r $A_PATH --skip $SKIP
