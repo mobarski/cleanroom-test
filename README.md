@@ -6,11 +6,17 @@ Data Clean Room utilities for probabilistic information exchange.
 
 ## Installation
 
-Use the executable file specific to your operating system:
+1. Download the repo: https://github.com/mobarski/cleanroom-test/archive/refs/heads/main.zip
 
-- linux: cleanroom
-- windows: cleanroom.exe
-- ~~macos: cleanroom-macos~~
+2. Unzip the file to a new direcotry.
+
+3. Use the executable file specific to your operating system:
+
+   - linux: cleanroom
+
+   - windows: cleanroom.exe
+
+   - ~~macos: cleanroom-macos~~
 
 
 
