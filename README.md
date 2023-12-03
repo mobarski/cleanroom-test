@@ -108,6 +108,84 @@ example output:
 
 
 
+
+
+## Test script usage
+
+- before running the test script:
+
+  - install required python modules:
+    - `pip install -r requirements.txt`
+
+- edit the `test` script to configure the parameters:
+
+  ```
+  A = number of items in the A set
+  B = number of items in the B set
+  C = number of common items in A and B
+  N = number of unique IDs to generate if the IDs are not already generated
+  kind = faker method to use for generating IDs:
+      ipv4, ipv6, email, mac_address, vin, iban, slug, etc.
+  ```
+
+- run the `test` script
+
+  - first run with the new `kind` of ID might take around 1 minute  as the system is creating the pool of 2_000_000 unique IDs
+
+  - following runs should take single seconds
+
+  - example output:
+
+    ```
+    loaded ipv4 IDs: 2000000
+    shuffling A and B
+    saving work/A.txt
+    saving work/B.txt
+    saving work/AH.txt
+    saving work/BH.txt
+    DONE
+    
+    # model: work/mm
+    - input items: ~100.0k
+    - model items: ~80.0k
+    - bits per item: 19.1
+    - size: ~191.4kb
+    - keys: 13
+    - desired error: 20.0%
+    - minimal error: 0.0102%
+    
+    # model processing:
+      Time: 66.8 ms
+      Rate: 1.5M items/s
+      Runs: 1
+    
+    Copyright (c) 2023 Maciej Obarski
+    Free for non-commercial and commercial non-production use.
+    Commercial production use requires written permission.
+    
+    
+    model intersection:   77467 (7.7% of 1000000 input ids)
+    real intersection:    80000
+    true positives:       64244
+    
+    false positives:      13223   16.5% vs real  intersection
+    false negatives:      15756   19.7% vs real  intersection
+    false items:          28979   36.2% vs real  intersection
+                                  37.4% vs model intersection
+                                   2.9% vs input size (1000000)
+                                  29.0% vs real  size (100000)
+    # model processing:
+      Time: 1.5 s
+      Rate: 0.7M items/s
+      Runs: 1
+    
+    Copyright (c) 2023 Maciej Obarski
+    Free for non-commercial and commercial non-production use.
+    Commercial production use requires written permission.
+    ```
+
+
+
 ## Advanced Usage
 
 
@@ -205,5 +283,7 @@ output from the same model but without using keys:
 
 
 ## Change log
+
+**0.6.4** - test script documentation, automatic initialization of the test set generator
 
 **0.6.4** - initial binary version (expires 2024-01-01)
