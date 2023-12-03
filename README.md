@@ -8,7 +8,7 @@ Data Clean Room utilities for probabilistic information exchange.
 
 1. Download the repo: https://github.com/mobarski/cleanroom-test/archive/refs/heads/main.zip
 
-2. Unzip the file to a new direcotry.
+2. Unzip the file to a new directory.
 
 3. Use the executable file specific to your operating system:
 
